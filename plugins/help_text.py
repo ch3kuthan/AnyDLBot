@@ -35,7 +35,7 @@ def GetExpiryDate(chat_id):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["help", "about"]))
 async def help_user(bot, update):
-        await c.send_message(
+        await bot.send_message(
             Config.LOG_CHANNEL,
             f"New User [{update.from_user.first_name}](tg://user?id={chat.id}) started."
         )
