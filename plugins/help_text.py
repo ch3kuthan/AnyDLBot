@@ -21,13 +21,14 @@ else:
 from translation import Translation
 
 import pyrogram
+from pyrogram import Client,Filters, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
 
 def GetExpiryDate(chat_id):
-    expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(7351948)
+    expires_at = (str(chat_id), "Free User", "2025.01.01.12.00.00")
+    Config.AUTH_USERS.add(365948926)
     return expires_at
 
 
@@ -40,10 +41,14 @@ async def help_user(bot, update):
         text=Translation.HELP_USER,
         parse_mode="html",
         disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
-    )
-
-
+        reply_to_message_id=update.message_id,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton('My Father', url='https://t.me/ChEkUtHaN')],
+                [InlineKeyboardButton('Update Cannel', url='https://t.me/BotUpdatez')],
+            ]
+       )
+   )
 @pyrogram.Client.on_message(pyrogram.Filters.command(["me"]))
 async def get_me_info(bot, update):
     # logger.info(update)
@@ -66,9 +71,15 @@ async def start(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT,
-        reply_to_message_id=update.message_id
-    )
+        reply_to_message_id=update.message_id,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton('1⃣', url='https://t.me/tezt369Bot')],
+                [InlineKeyboardButton('2⃣', url='https://t.me/tezt369Bot')],
+            ]
+        )
 
+   )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
 async def upgrade(bot, update):
