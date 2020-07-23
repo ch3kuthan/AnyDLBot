@@ -44,8 +44,8 @@ async def help_user(bot, update):
         reply_to_message_id=update.message_id,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton('My Father', url='https://t.me/ChEkUtHaN')],
-                [InlineKeyboardButton('Update Cannel', url='https://t.me/BotUpdatez')],
+                [InlineKeyboardButton('1⃣', url='https://t.me/ChEkUtHaN')],
+                [InlineKeyboardButton('2⃣', url='https://t.me/BotUpdatez')],
             ]
        )
    )
